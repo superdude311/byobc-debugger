@@ -9,11 +9,13 @@ start:
 
 sum_loop:
 	; Your code goes here!
-
+	STX $1234
+	CLC
+	ADC $1234
 	; Add X to A (hint: you can't do this directly)
-
+	DEX
 	; Decrement X
-
+	BNE sum_loop
 	; Branch back up to the beginning of the loop!
 	
 halt:
