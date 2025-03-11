@@ -50,7 +50,9 @@ checksum:
 	; This can be done in 7 instructions.
 	;
 	; Fill in your code below!
-
+	
+loop:
+	adc string_data,X
 
 
 
