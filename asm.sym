@@ -1,6 +1,9 @@
 --- Symbol List (sorted by symbol)
-halt                     800e              (R )
-reset_vectors            fffa                  
+blink                    8005              (R )
 start                    8000              (R )
-sum_loop                 8004              (R )
+vector_table             fffa                  
+VIA_DDR_A                6003              (R )
+VIA_DDR_B                6002                  
+VIA_REG_A                6001              (R )
+VIA_REG_B                6000                  
 --- End of Symbol List.

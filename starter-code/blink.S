@@ -12,12 +12,15 @@ VIA_DDR_A	= $6003
 
 start:
 	; First, make sure to set the pin to output
-
+	LDA #%11111111
+	STA VIA_DDR_A	
 blink:
 	; Now turn the LED on!
-
+	LDA #%00000001
+	STA VIA_REG_A
 	; Now turn the LED off!
-
+	LDA #%00000000
+	STA VIA_REG_A
 	JMP blink
 
 	ORG $FFFA
