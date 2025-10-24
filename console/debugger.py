@@ -667,6 +667,17 @@ def do_debug(args):
         try:
             if cmd in ('reload_cpu_state', ):
                 pass
+            elif cmd in ('help'):
+                print("""Available commands:
+break      (b): create breakpoint
+step (s/enter): step 1 instruction
+stephalf   (h): step half a clock cycle (1 clock edge)
+stepcycle  (y): step 1 clock cycle
+continue   (c): continue until next breakpoint
+fast       (f): enter fast mode (uses real 6502 instead of emulation)
+walk       (w): continue by half-steps until next breakpoint
+reset      (r): reset the cpu
+quit       (q): quit the debugger""")
             elif cmd in ('s', 'step'):
                 free_running = False
                 dbg.poll_breakpoint()
@@ -685,7 +696,7 @@ def do_debug(args):
             elif cmd in ('w', 'walk'):
                 free_running = True
                 walking = True
-            elif cmd in ('q'):
+            elif cmd in ('q', 'quit'):
                 break
             elif cmd in ('r', 'reset'):
                 dbg.reset_cpu()
