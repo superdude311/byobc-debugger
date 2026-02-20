@@ -32,9 +32,6 @@ fail:
     lda #$FF
     jmp fail
 
-    
-
-
 halt:
 	jmp halt
 
@@ -50,14 +47,15 @@ checksum:
 	; This can be done in 7 instructions.
 	;
 	; Fill in your code below!
-	
+
+	lda #0 
 loop:
-	adc string_data,X
-
-
-
-
-
+	clc
+	adc string_data,X 
+	inx
+	ldy string_data,X ; for comparison btwn A and Y
+	bne loop ; branch if comparison is not zero
+	rts
 
 	; Here's your string data!
 string_data:
